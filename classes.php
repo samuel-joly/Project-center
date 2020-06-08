@@ -30,4 +30,19 @@ class userpdo
             }
         }
     }
+    public function search() {
+        if (!empty($_GET['research']))
+        {
+        $research = $_GET['research'];
+        $bdd = new PDO("mysql:host=localhost;dbname=autocompletion", "root", "");
+        $request = "SELECT * FROM 'prenoms' WHERE prenom LIKE $research%";
+        $prepare = $bdd->prepare($request);
+        $prepare->execute($request);
+        }
+        else {
+            echo "toto";
+        }
+
+
+    }
 }

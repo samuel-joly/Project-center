@@ -14,6 +14,8 @@
 <header>
 </header>
     <main>
+    <input id="search" type="search" name="research">
+    <?php $user->search() ?>
 
     </main>
     <footer></footer>
