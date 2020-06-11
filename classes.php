@@ -1,20 +1,31 @@
 <?php
+require("functions.php");
 class userpdo
 {
+    public $pdo = "";
 
+    public function __construct() {
+        try { //Si une erreur apparait dans lebloc try
+		$pdo = new PDO("mysql:host=localhost;dbname=autocompletion;charset=UTF8","root","");
+	} catch(Exception $e) { // Elle est affiche ici
+		return display_errors(["Une erreur est survenue lors de la connection ".$e->getMessage()]);
+	}
+
+	$this->pdo = $pdo;
+    }
+    
     public function insertdata() //--------------------J'ai utiliser ceci pour insérer des données dans la bdd plus rapidement.
     {
         if (isset($_GET['bouton'])) {
             $nom = $_GET['nom'];
-            $bdd = new PDO("mysql:host=localhost;dbname=autocompletion", "root", "");
             $request = "SELECT * FROM prenoms WHERE prenom ='$nom'";
-            $query = $bdd->query($request);
+            $query = $this->pdo->query($request);
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
             if (!empty($result)) {
-                echo "Ce prénom existe déjà";
+	    	return display_errors(["Ce pseudo existe deja"]);
             } else if (empty($nom)) {
-                echo "veuillez entrer un nom.";
+	    	return display_errors(["Veuillez entrer un nom."]);
             }
             else {
                 $nomhtml = htmlspecialchars($_GET['nom']);
@@ -33,14 +44,13 @@ class userpdo
     public function search() {
         if (!empty($_GET['research']))
         {
-        $research = $_GET['research'];
-        $bdd = new PDO("mysql:host=localhost;dbname=autocompletion", "root", "");
-        $request = "SELECT * FROM 'prenoms' WHERE prenom LIKE $research%";
-        $prepare = $bdd->prepare($request);
-        $prepare->execute($request);
+		$research = $_GET['research'];
+		$request = "SELECT * FROM 'prenoms' WHERE prenom LIKE $research%";
+		$prepare = $this->pdo->prepare($request);
+		$prepare->execute($request);
         }
         else {
-            echo "toto";
+		return display_Errors(["Pas de résultat."]);
         }
 
 
