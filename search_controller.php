@@ -11,7 +11,7 @@ if(isset($_GET["action"])) {
 			$value = $_GET["value"];
 			$query = $pdo->pdo->query("SELECT id,prenom, description
 			FROM prenoms WHERE prenom REGEXP
-			'$value'");
+			'^$value'");
 			$res = $query->fetchAll(PDO::FETCH_ASSOC);
 			echo json_encode($res);
 		break;
