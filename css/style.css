@@ -1,7 +1,14 @@
-body {
-    background-color: rgb(255, 255, 255);
+#search_list {
+	position:relative;
+	width:480px;
+	max-height:15em;
+	overflow-y:scroll;
 }
 
-nav {
-    background-color: gold;
+.search_item {
+	transition:all 0.4s ease;
+}
+
+.search_item:hover {
+	background:#ffffff;
 }
