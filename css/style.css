@@ -1,4 +1,8 @@
-#search_list {
+body {
+	overflow-x:hidden;
+}
+
+.search_list {
 	position:absolute;
 	top:100%;
 	left:0;
@@ -17,6 +21,11 @@
 	cursor:pointer;
 }
 
-#search_parent {
+.search_parent {
 	position:relative;
+}
+
+input[type="text"]:focus {
+	border: 1px solid #ced4da !important;
+	box-shadow:none;
 }
