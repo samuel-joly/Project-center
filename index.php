@@ -6,11 +6,11 @@
 	    <link rel="stylesheet" type="text/css" href="css/style.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
-	<body>
-	    <header class='d-flex row w-100 m-0 justify-content-center'>
+	<body class='m-0 p-0'>
+	    <header class='d-flex row w-100 m-0 justify-content-center bg-secondary border-secondary'>
 
-		<div class='input-group w-100 row col-12 mt-2 justify-content-end p-0' id='search_parent'>
-			<div class='p-0 m-0 row col-lg-3 col-md-5 col-6'>
+		<div class='input-group w-100 row col-12 mt-2 justify-content-end p-0 mb-2 mr-2' >
+			<div class='p-0 m-0 row col-lg-3 col-md-5 col-6' class='search_input' id='search_parent'>
 				<input id="search" type="text" name="research" placeholder='Search a name' class='form-control col-9'/>
 				<div class='input-group-append col-3 p-0'>
 					<button class='btn btn-primary col-12' type='button' name='search' id='searchBtn'>Search</button>

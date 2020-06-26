@@ -15,11 +15,14 @@ $("#search").keyup(function() {
 
             success:function(data){
 	    	$("#search_list").remove();
-		$("#search_parent").append("<div id='search_list' class='col-lg-3 col-md-5 col-6 offset-8 p-0'>"+data+"</div>");
+		$("#search_parent").append("<div id='search_list' class='p-0'>"+data+"</div>");
             }	});
 
     } else {
-
+	$("#search_list").remove();
     }
 
 })
+
+$("body").click(function() {$("#search_list").remove();})
+
