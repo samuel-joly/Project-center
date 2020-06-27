@@ -10,7 +10,7 @@ if(isset($_GET["action"])) {
 			$pdo = new Bdd();
 
 			$value = $_GET["value"];
-			$query = $pdo->pdo->query("SELECT id,prenom, status, image FROM prenoms WHERE prenom REGEXP'^$value'");
+			$query = $pdo->pdo->query("SELECT id, name, status, avatar FROM users WHERE name REGEXP'^$value'");
 			$res = $query->fetchAll(PDO::FETCH_ASSOC);
 			
 			foreach($res as $match) { 

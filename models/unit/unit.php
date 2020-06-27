@@ -23,7 +23,9 @@ class Unit extends Bdd {
 		}
 	}
 
+	public function get_all_unit() {
+		return $this->pdo->query("SELECT * FROM units")->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 }
 
-$u =  new Unit();
-print_r($u->get_unit_infos(1));

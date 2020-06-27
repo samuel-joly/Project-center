@@ -1,0 +1,6 @@
+
+$("#inscr-btn").click(function(){
+
+	
+
+})
