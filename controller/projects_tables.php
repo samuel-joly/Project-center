@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("models/unit/unit.php");
 try {
 	$u = new Unit();
@@ -10,7 +11,7 @@ try {
 			require("views/project_table.php");
 			echo $table_head;
 
-			$projects = $u->get_unit_projects($unit["id"]);
+			$projects = $u->get_unit_projects($unit["id"], $_SESSION["promo"]);
 			foreach($projects as $project) {
 				require("views/project_table_content.php");
 				echo $table_content;

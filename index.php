@@ -1,5 +1,7 @@
 <?php
-	if(!isset($_COOKIE["email"]) || !isset($_COOKIE["password"])) {
+session_start();
+
+	if(!isset($_SESSION["logged"])) {
 		require("views/connexion_inscription.php");
 	} else {
 		require("main.php");

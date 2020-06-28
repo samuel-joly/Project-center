@@ -14,9 +14,9 @@ class Unit extends Bdd {
 		}
 	}
 
-	public function get_unit_projects($id_unit) {
-		$sth = $this->pdo->prepare("SELECT * FROM projects WHERE unit=?");
-		if($sth->execute(array($id_unit))) {
+	public function get_unit_projects($id_unit, $promo) {
+		$sth = $this->pdo->prepare("SELECT * FROM projects WHERE unit=? and promo=?");
+		if($sth->execute(array($id_unit, $promo))) {
 			return $sth->fetchAll(PDO::FETCH_ASSOC);
 		} else {
 			throw new Exception("Can't get projects from unit Bad id '$id_unit'"); 

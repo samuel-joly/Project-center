@@ -11,7 +11,7 @@
 				<th class='text-center' style='width:7em;'>Taille équipe</th>
 				<th class='text-center' style='width:7em;'>Temps impartis</th>
 				<th class='text-center' style='width:1em;'>PDF</th>
-				<th class='text-center' style='width:8em;'>Recherche groupe</th>
+				<th class='text-center' style='width:9em;'>Recherche groupe</th>
 			</tr>
 		</thead>
 

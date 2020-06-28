@@ -31,7 +31,7 @@ CREATE TABLE `projects` (
   `promo` int NOT NULL,
   `unit` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES ('autocompletion','projects/autocompletion.pdf',4,2,1,1,1);
+INSERT INTO `projects` VALUES ('autocompletion','projects/autocompletion.pdf',4,2,1,2019,1),('ToDoList','projects/todolist.pdf',5,2,2,2019,1),('Boutique','projects/boutique.pdf',14,2,3,2019,3),('Forum','projects/forum.pdf',10,2,4,2019,3),('Oclock','projects/oclock.pdf',5,2,5,2019,1),('Blog','projects/blog.pdf',14,2,6,2019,3),('Classe','projects/classe.pdf',2,1,7,2019,3),('Memory','projects/memory.pdf',7,2,8,2019,3),('Réservation salle','projects/reservation_salle.pdf',6,1,9,2019,3),('Discussion','projects/discussion.pdf',6,1,10,2019,3),('Livre d\'or','projects/livre_or.pdf',6,1,11,2019,3),('Module Connexion','projects/module_connexion.pdf',6,1,12,2019,3),('Menuiserie','projects/menuiserie.pdf',3,2,13,2019,2),('Btp','projects/btp.pdf',3,2,14,2019,2),('fansite','projects/fansite.pdf',3,2,15,2019,2),('Botanique','projects/botanique.pdf',3,2,16,2019,2),('Portfolio','projects/portfolio.pdf',3,1,17,2019,2),('Connexion','projects/connexion.pdf',3,1,18,2019,2),('App Favorite','projects/app_favorite.pdf',3,1,19,2019,2),('Analytics','projects/analytics.pdf',5,2,20,2019,1),('Taquin','projects/taquin.pdf',5,2,21,2019,1),('Clicker','projects/clicker.pdf',10,2,22,2019,1),('Little Discord','projects/little_discord.pdf',7,2,23,2019,1),('Cinetech','projects/cimetech.pdf',7,2,24,2019,1),('Puissance 4','projects/puissance4.pdf',10,2,25,2019,1),('My PhpMyAdmin','projects/myphpmyadmin.pdf',10,2,26,2019,1),('La Ville de Marseille','projects/ville_de_marseille.pdf',5,2,28,2019,2),('Voyage','projects/Voyage.pdf',5,2,29,2019,2),('Phonotèque','projects/phonoteque.pdf',5,2,30,2019,2),('IDE','projects/ide.pdf',5,2,31,2019,2),('Agenda','projects/agenda.pdf',5,2,32,2019,2),('Cinetech','projects/cinetech.pdf',5,2,33,2019,2),('Videoteque','projects/videotheque.pdf',5,2,34,2019,2);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,6 +80,7 @@ CREATE TABLE `units` (
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `color` varchar(255) NOT NULL,
+  `promo` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -90,7 +91,7 @@ CREATE TABLE `units` (
 
 LOCK TABLES `units` WRITE;
 /*!40000 ALTER TABLE `units` DISABLE KEYS */;
-INSERT INTO `units` VALUES (1,'JavaScript','Tout ce qu\'il faut pour pratiquer JavaScript,Jquery et Ajax. Devenez un pro du  web dynamique !','#dea700'),(2,'HTML','Commencez simplement en créant vos contenu avec l\'HyperText Markup Language et décorez le avec les Cascading StyleSheet','#dc3545'),(3,'PHP','Découvrez comment traiter les données d\'un site via PHP HYpertext Preprocessor et savegardez les données via MySQL','#28a745');
+INSERT INTO `units` VALUES (1,'JavaScript','Tout ce qu\'il faut pour pratiquer JavaScript,Jquery et Ajax. Devenez un pro du  web dynamique !','#dea700',1),(2,'HTML','Commencez simplement en créant vos contenu avec l\'HyperText Markup Language et décorez le avec les Cascading StyleSheet','#dc3545',1),(3,'PHP','Découvrez comment traiter les données d\'un site via PHP HYpertext Preprocessor et savegardez les données via MySQL','#28a745',1);
 /*!40000 ALTER TABLE `units` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,8 +112,9 @@ CREATE TABLE `users` (
   `discord` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `email` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `password` varchar(250) COLLATE latin1_general_ci NOT NULL,
+  `promo` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +123,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Amar','Le prénom du plus beau.\r\nDu plus fort.\r\nDu plus...bon j\'ai plus d\'argument.\r\n\r\nAmar quoi.\r\n','1.jpg','le plus drole','Amar','','',''),(52,'Joly','Plus bete qu\'il en a l\'air','52.png','Vim a vie','Samuel','Azefortwo#3256','samuel.joly@laplateforme.io','$2y$10$xTsNJcj8gqoaqX5b4FYm9.Y.zHnX2uwMwiKBJ1ndqIxSKlbtURX1C');
+INSERT INTO `users` VALUES (1,'Amar','Le prénom du plus beau.\r\nDu plus fort.\r\nDu plus...bon j\'ai plus d\'argument.\r\n\r\nAmar quoi.\r\n','1.jpg','le plus drole','Amar','','','',2019),(60,'Admin','Etudiant a LaPlateforme_','default.png',NULL,'Istre','Azefortwo','sadmin@laplateforme.io','$2y$10$4AwNW2yh..cOOWMvO8qpy.pmK0e/YNIJWCgxPBkLIVYt66yFKzeki',2019);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -134,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-27 20:49:50
+-- Dump completed on 2020-06-28 22:50:35
