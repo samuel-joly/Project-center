@@ -51,7 +51,7 @@ class User extends Bdd {
 		if(!empty($dtb_password)) {
 			if(password_verify($password, $dtb_password[0])) {
 				$_SESSION["logged"] = $email;
-				$_SESSION["promo"] = $promo;
+				$_SESSION["promo"] = $dtb_password[1];
 				return true;
 			} else {
 				throw new Exception("Wrong password or email.");

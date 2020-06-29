@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("models/unit/unit.php");
 try {
 	$u = new Unit();
