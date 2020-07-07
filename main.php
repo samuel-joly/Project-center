@@ -7,7 +7,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body class='m-0 p-0'>
-	    <header class='d-flex row w-100 m-0 justify-content-center bg-light border-secondary'>
+	    <header class='d-flex row w-100 m-0 justify-content-center bg-light border-secondary' style='position:fixed;z-index:999;'>
 
 		<div class='input-group w-100 row col-12 mt-2 justify-content-between p-0 mb-2 mr-2' >
 			<div class='col-4 row align-items-center m-0 p-0'>
@@ -15,7 +15,7 @@
 				<p class='h3 text-black' class='col-lg-8 col-8 m-0 p-0'>La Plateforme_</p>
 			</div>
 			<div class='p-0 m-0 row col-lg-3 col-md-5 col-6 search_parent align-items-center' >
-				<input id="search" type="text" name="research" placeholder="Cherchez quelqu'un" class='form-control col-lg-9 col-8'/>
+				<input id="search" type="text" name="research" placeholder="Cherchez un projet" class='form-control col-lg-9 col-8'/>
 				<div class='input-group-append col-lg-3 col-4 p-0'>
 					<button class='btn btn-primary col-12' style='height:fit-content;'type='button' name='search' id='searchBtn'>Search</button>
 				</div>
@@ -28,9 +28,8 @@
 		<div class='w-100 row  ml-0 mb-3 p-0' style='background:url("medias/promo2002-dark.jpeg") no-repeat center;background-size:cover; height:50em;'>
 			<div class='input-group row col-12 mt-2 justify-content-center p-0 mb-2 mr-2 align-items-center' >
 				<div class='p-0 m-0 row col-lg-12 align-items-center justify-content-center search_main_parent' style='height:fit-content;'>
-					<p class='text-white text-center col-12 m-0' style='font-size:70px;'>Trouvez un partenaire</p>
-					<p class='text-white text-center col-12 m-0' style='font-size:30px;'>Gérez vos projets</p>
-					<input id="search_main" type="text" name="research" placeholder="Cherchez quelqu'un" class='form-control col-3'/>
+					<p class='text-white text-center col-12 m-0' style='font-size:70px;'>Trouvez un projet</p>
+					<input id="search_main" type="text" name="research" placeholder="Cherchez un projet" class='form-control col-3'/>
 					<div class='input-group-append col-1 p-0'>
 						<button class='btn btn-primary col-12' style='height:fit-content;'type='button' name='search' id='searchBtn'>Search</button>
 					</div>
@@ -62,7 +61,9 @@
 	    </main>
 
 	    <footer></footer>
-	    <script src='js/script.js'></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src='js/script.js'></script>
 	</body>
 
 </html>

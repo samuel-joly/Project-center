@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require("../models/bdd/bdd.php");
+require("../../models/bdd/bdd.php");
 
 class User extends Bdd {
 	public function is_email_valid($email) {
@@ -58,6 +58,15 @@ class User extends Bdd {
 			}
 		} else {
 			throw new Exception("No account linked to this email\nConsider making an account.");
+		}
+	}
+
+	public function get_infos($id){
+		$stmt = $this->pdo->prepare("SELECT * FROM users WHERE id = ?");
+		if($stmt->execute(array($id))) {
+			return $stmt->fetchAll(PDO::FETCH_ASSOC)[0];			
+		} else {
+			throw new Exception("Impossible d'acceder aux donnees de l'utilisateur $id");
 		}
 	}
 

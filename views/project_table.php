@@ -1,18 +1,18 @@
 <?php ob_start(); ?>
-<div class='card border rounded col-5 p-2 m-4' style='height:fit-content;background:<?=$unit["color"]?>;'> 
+<div class='col-12 mb-0' style='height:fit-content;'> 
 
-	<p class='h2 text-white text-center' style='font-size:2.5em;'><?=$unit["name"]?></p>
-	<p class='text-white text-center' style='font-size:1em;'><?=$unit["description"]?></p>
-
-	<table class='table col-12 table-stripped table-bordered table-sm mb-0'>
+	<table class='table col-12 table-stripped table-bordered table-sm mb-0 bg-light table-hover'>
 		<thead class='thead-dark'>
 			<tr>
-				<th class='text-center' style='width:5em;'>Nom</th>
-				<th class='text-center' style='width:7em;'>Taille équipe</th>
-				<th class='text-center' style='width:7em;'>Temps impartis</th>
-				<th class='text-center' style='width:1em;'>PDF</th>
-				<th class='text-center' style='width:9em;'>Recherche groupe</th>
-			</tr>
+				<th class='text-center' style=''>Unit</th>
+				<th class='text-center' style=''>Nom</th>
+				<th class='text-center' style=''>Taille équipe min</th>
+				<th class='text-center' style=''>Taille équipe max</th>
+				<th class='text-center' style=''>Temps impartis</th>
+				<th class='text-center' style=''>Prérequis</th>
+				<th class='text-center' style=''>Difficulté</th>
+				<th class='text-center' style=''>PDF</th>
+			</tr> 
 		</thead>
 
 		<tbody class='bg-light'>

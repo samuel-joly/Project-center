@@ -12,7 +12,7 @@ class Unit extends Bdd {
 		} else {
 			throw new Exception("Can't get unit infos : Bad id '$id_unit'");
 		}
-	}
+	} 
 
 	public function get_unit_projects($id_unit, $promo) {
 		$sth = $this->pdo->prepare("SELECT * FROM projects WHERE unit=? and promo=?");

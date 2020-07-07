@@ -7,12 +7,12 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 
-	<body class='m-0 p-2 d-flex justify-content-center align-items-center row' style='background:url("../medias/promo2002-dark.jpeg") no-repeat center;background-size:cover; height:100vh;'>
+	<body class='m-0 p-2 d-flex justify-content-center align-items-center row' style='background:url("medias/promo2002-dark.jpeg") no-repeat center;background-size:cover; height:100vh;'>
 		<?php if(isset($_GET["inscr"])) { ?>
 			<script>alert("Inscription effectuée, vous pouvez vous connecter")</script>
 		<?php } ?>
 		<div class='row d-flex flex-column col-12 align-items-center justify-content-center'>
-			<form class='form-group col-lg-4 col-md-5 col-12 row rounded bg-light shadow m-2 p-2' method='POST' action='../controller/connexion.php'>
+			<form class='form-group col-lg-4 col-md-5 col-12 row rounded bg-light shadow m-2 p-2' method='POST' action='controller/log/connexion.php'>
 				<p class='col-12 h2 text-center m-0 p-0'>Connexion</p>
 				<div class='col-12 d-flex row justify-content-center m-1 p-1'>
 					<div class='row p-1 col-12 ' style='position:relative;'>
@@ -30,7 +30,7 @@
 				</div>
 			</form>
 
-			<form class='col-lg-4 col-md-5 col-12 row rounded bg-light shadow m-2 justify-content-center p-2' method='POST' action='../controller/inscription.php' enctype='multipart/form-data'>
+			<form class='col-lg-4 col-md-5 col-12 row rounded bg-light shadow m-2 justify-content-center p-2' method='POST' action='controller/log/inscription.php' enctype='multipart/form-data'>
 				<p class='h2 col-12 text-center m-0 p-0'>Inscription</p>
 
 				<div class='col-12 row d-flex m-1' style='position:relative;'>
