@@ -7,5 +7,3 @@
 	} else {
 		throw new Exception("Impossible d'acceder au profil de cet utilisateur :/");
 	}
-
-?>

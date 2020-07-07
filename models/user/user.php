@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require("../../models/bdd/bdd.php");
+require($_SESSION["ROOT_PATH"]."models/bdd/bdd.php");
 
 class User extends Bdd {
 	public function is_email_valid($email) {
@@ -25,7 +25,6 @@ class User extends Bdd {
 			$sth = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
 			if($sth->execute(array($email))) {
 				if(empty($sth->fetchAll())) {
-					//$private_key = crypt($password, '$5$somuchsalthereomg');
 					if($password == $password_confirm) {
 						$password = password_hash($password, PASSWORD_BCRYPT);
 						$sth = $this->pdo->prepare("INSERT INTO users(id, name, second_name, password, email, avatar, discord, description, promo) VALUES(NULL, ?, ?, ?, ?, 'default.png', ?, 'Etudiant a LaPlateforme_', ?)");
@@ -35,7 +34,6 @@ class User extends Bdd {
 							throw new Exception("Couldn't add the user to the database");		}
 					} else {
 						throw new Exception("Passwords does not match.");	}
-
 				} else {
 					throw new Exception("Account already existing with the email :$email ");	}
 			} else {
@@ -45,13 +43,14 @@ class User extends Bdd {
 	}
 
 	public function connect($email, $password) {
-		$sth = $this->pdo->prepare("SELECT password, promo FROM users WHERE email=?");
+		$sth = $this->pdo->prepare("SELECT password, promo, id FROM users WHERE email=?");
 		$sth->execute(array($email));
 		$dtb_password = $sth->fetch();
 		if(!empty($dtb_password)) {
 			if(password_verify($password, $dtb_password[0])) {
 				$_SESSION["logged"] = $email;
 				$_SESSION["promo"] = $dtb_password[1];
+				$_SESSION["id"] = $dtb_password[2];
 				return true;
 			} else {
 				throw new Exception("Wrong password or email.");

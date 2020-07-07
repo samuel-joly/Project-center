@@ -5,7 +5,7 @@
 		<p class='text-muted col-12 m-0' style='font-size:1em;'><?=$match["unit_name"]?></p>
 	</div>
 	<div class='col-4 d-flex justify-content-end'>
-		<a href='projects/<?=$match["pdf"]?>' class='btn btn-primary m-2' style='font-size:1em;'>Telecharger</a>
+		<a href='<?=$match["pdf"]?>' target='blank' class='btn btn-success m-2' style='font-size:1em;'>Telecharger</a>
 	</div>
 </div>
 <?php echo ob_get_clean(); ?>

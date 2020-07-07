@@ -13,7 +13,7 @@ function autocomplete(value, main=true) {
 					$(".search_parent").append("<div class='search_list p-0'>"+data+"</div>");
 				}
 				
-				set_search_event();
+				//set_search_event();
 			}
 		}); 
 	} else {
