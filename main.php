@@ -55,7 +55,7 @@
 
 	
 		<div class='m-1 mt-3 p-1 row justify-content-center'>
-			<?php require("controller/projects_tables.php"); ?>
+			<?php require($_SESSION["ROOT_PATH"]."controller/projects_tables.php"); ?>
 		</div>
 
 	    </main>

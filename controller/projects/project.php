@@ -7,14 +7,17 @@ $p = new Project();
 
 if(isset($_POST["action"])){
 	$action = $_POST["action"];
+	try{
+		switch($action){
+			case "set_rating":
+				$p->set_rating($_POST["id_project"], $_POST["rate"]);
+				break;
 
-	switch($action){
-		case "set_rating":
-			$p->set_rating($_POST["id_project"], $_POST["rate"]);
-			break;
-
-		case "get_rating":
-			echo $p->display_rating($_POST["id_project"]);
-			break;
+			case "get_rating":
+				echo $p->display_rating($_POST["id_project"]);
+				break;
+		}
+	} catch (Exception $e) {
+		echo $e->getMessage();
 	}
 }

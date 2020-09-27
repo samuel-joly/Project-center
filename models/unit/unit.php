@@ -24,7 +24,7 @@ class Unit extends Bdd {
 	}
 
 	public function get_all_unit() {
-		return $this->pdo->query("SELECT * FROM units")->fetchAll(PDO::FETCH_ASSOC);
+		return $this->pdo->query("SELECT * FROM units ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 }

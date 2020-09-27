@@ -6,8 +6,8 @@ try {
 	$u = new Unit();
 
 	$units = $u->get_all_unit();
-
-	require("views/project_table.php");
+	
+	require($_SESSION["ROOT_PATH"]."views/project_table.php");
 	echo $table_head;
 
 	foreach($units as $unit) {
@@ -16,12 +16,12 @@ try {
 			foreach($projects as $project) {
 				$p = new Project();
 				$requirement = $p->get_requirement($project["id"]);
-				require("views/project_table_content.php");
+				require($_SESSION["ROOT_PATH"]."views/project_table_content.php");
 				echo $table_content;
 			}
 	}
 
-	require("views/project_table_end.php");
+	require($_SESSION["ROOT_PATH"]."views/project_table_end.php");
 	echo $table_end;
 
 } catch (Exception $e) {

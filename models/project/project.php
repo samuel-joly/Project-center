@@ -36,16 +36,17 @@ class Project extends Bdd{
 	}
 
 	public function set_rating($id_project, $rate) {
-		$stmt = $this->pdo->prepare("select * from difficulty where id_user = ?");
-		if($stmt->execute(array($_SESSION["id"]))) {
-			if(count($stmt->fetchAll()) > 0) {
-				$stmt = $this->pdo->query("DELETE from difficulty WHERE id_project= $id_project and id_user=".$_SESSION['id']);
-				$stmt = $this->pdo->prepare("insert into difficulty(id, id_project, id_user, rate) values(NULL, ?, ?, ?)");
-				if($stmt->execute(array($id_project, $_SESSION["id"], $rate))) {
-					echo True;
-				} else {
-					throw new Exception("Impossible d'ajouter la note $rate au projet projet $id_project");
-				}
+		$stmt = $this->pdo->prepare("select * from difficulty where id_user = ? and id_project = ?");
+		if($stmt->execute(array($_SESSION["id"], $id_project))) {
+			if(count($stmt->fetchAll()) != 0) {
+				$stmt = $this->pdo->query("DELETE from difficulty WHERE id_project= $id_project and id_user=".$_SESSION['id']);	
+			}
+
+			$stmt = $this->pdo->prepare("insert into difficulty(id, id_project, id_user, rate) values(NULL, ?, ?, ?)");
+			if($stmt->execute(array($id_project, $_SESSION["id"], $rate))) {
+				return true;
+			} else {
+				throw new Exception("Impossible d'ajouter la note $rate au projet projet $id_project");
 			}
 		} else {
 			throw new Exception("Impossible de recuperer la difficulte du projet $id_project");

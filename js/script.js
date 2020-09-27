@@ -59,24 +59,22 @@ function set_rating(e){
 			type:"POST",
 			data:{'id_project':id_project, "rate":rate, "action":"set_rating"},
 			success:function(data){
-				if(data){
-					$.ajax({
-						url:"controller/projects/project.php",
-						type:'POST',
-						data:{"action":"get_rating", "id_project":id_project},
-						success:function(data){
-							$("#"+id_project+" #rating").children(".rate").tooltip("dispose");
-							$("#"+id_project+" #rating").children(".rate").remove();
-							$("#"+id_project+" #rating").append(data);
+				$.ajax({
+					url:"controller/projects/project.php",
+					type:'post',
+					data:{"action":"get_rating", "id_project":id_project},
+					success:function(data){
+						$("#"+id_project+" #rating").children(".rate").tooltip("dispose");
+						$("#"+id_project+" #rating").children(".rate").remove();
+						$("#"+id_project+" #rating").append(data);
 
-							$(".rate").click(function(e){
-								set_rating(e)
-							});
+						$(".rate").click(function(e){
+							set_rating(e)
+						});
 
-							$("#"+id_project+" #rating").children(".rate").tooltip()
-						}
-					})
-				}
+						$("#"+id_project+" #rating").children(".rate").tooltip()
+					}
+				})
 			}
 		})
 }

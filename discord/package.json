@@ -1,0 +1,27 @@
+{
+  "name": "discord",
+  "version": "1.0.0",
+  "description": "Discord bot for requesting projects and manipulate them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuel-joly/Project-center.git"
+  },
+  "keywords": [
+    "discordBot",
+    "laPlateforme_"
+  ],
+  "author": "Azefortwo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuel-joly/Project-center/issues"
+  },
+  "homepage": "https://github.com/samuel-joly/Project-center#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "mysql": "^2.18.1"
+  }
+}
